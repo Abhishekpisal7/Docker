@@ -1,0 +1,11 @@
+services:
+  npm:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: node
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/app
+    

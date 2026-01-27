@@ -1,0 +1,12 @@
+{
+  "name": "node-simple-frontend-combined",
+  "version": "1.0.0",
+  "description": "A minimal Node.js Express app with frontend (HTML, CSS, JS) embedded into server.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
