@@ -1,4 +1,6 @@
-FROM node:16-alpine
+ARG TAG=16-alpine
+
+FROM node:${TAG}
 
 WORKDIR /app
 
@@ -8,6 +10,8 @@ RUN npm install
 
 COPY . /app 
 
-EXPOSE 3000
+ENV PORT 3000
+
+EXPOSE ${PORT}
 
 CMD ["npm", "start"]
