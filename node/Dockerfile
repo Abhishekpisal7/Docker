@@ -13,8 +13,11 @@ RUN npm install
 # Copy the rest of the application code also use COPY . .
 COPY app.js ./
 
+# Setting  Up the Env Variable
+ENV PORT 3000
+
 # Expose the port your app listens on
-EXPOSE 3000
+EXPOSE $PORT
 
 #start app
 CMD ["npm", "start"]

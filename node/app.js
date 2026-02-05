@@ -6,7 +6,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // Serve dynamic HTML with embedded CSS and JS
 app.get("/", (req, res) => {
