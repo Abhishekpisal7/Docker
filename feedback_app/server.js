@@ -96,7 +96,7 @@ app.get("/", (req, res) => {
     </head>
     <body>
       <div class="container">
-        <h1>We Value Your Feedback</h1>
+        <h1>We Value Your Feedback.</h1>
         <form method="POST" action="/submit">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" placeholder="Your Name" required>
