@@ -17,7 +17,7 @@ COPY app.js ./
 ENV PORT 3000
 
 # Expose the port your app listens on
-EXPOSE $PORT
+EXPOSE ${PORT}
 
 #start app
 CMD ["npm", "start"]
