@@ -243,7 +243,7 @@ app.get("/feedbacks", (req, res) => {
       </head>
       <body>
         <div class="container">
-          <h1>All Feedbacks</h1>
+          <h1>All Feedbacks..</h1>
           <table>
             <tr>
               <th>Name</th>
