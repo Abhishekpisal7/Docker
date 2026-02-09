@@ -1,0 +1,55 @@
+services:
+  mongo1:
+    image: 'mongo'
+    container_name: mongo1
+    volumes:
+      - data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: abhishek
+      MONGO_INITDB_ROOT_PASSWORD: abhishek2543
+    networks:
+      - mongo-network
+
+  node_backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile 
+    image: node_backend
+    container_name: node_backend
+    ports:
+      - '80:80'
+    volumes:
+      - logs:/aap/logs
+      - ./backend:/app
+      - /app/node_modules
+    env_file:
+      - ./backend/.env
+    networks:
+      - mongo-network
+    depends_on:
+      - mongo1
+
+  node_frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: node_frontend
+    container_name: node_frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend/src:/app/arc
+    networks:
+      - mongo-network
+    depends_on:
+      - node_backend
+    
+volumes:
+  data:
+    external: true
+  logs:
+    external: true
+
+networks:
+  mongo-network:
+    external: true
